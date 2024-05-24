@@ -32,7 +32,7 @@ class OBJECT_OT_ParentByPositionRotation(bpy.types.Operator):
                             other.parent = obj
                             other.matrix_world = other_matrix_world
                             # Rename the child object with the specified suffix
-                            other.name = f"{other.name}{suffix}"
+                            other.name = f"{obj.name}{suffix}"
                             # Toggle visibility of the child object
                             other.hide_set(True)
                             other.hide_render = True  # Remove from render
