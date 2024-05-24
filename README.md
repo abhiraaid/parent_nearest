@@ -1,5 +1,4 @@
 # Parent Nearest
-Parent Objects by Position, Rotation, and Scale with Suffix.
 Useful for parenting overlapping objects(same position, rotation, scale) to each selected object.
 
 Intended usecase is for quickly parenting and hiding collision objects
