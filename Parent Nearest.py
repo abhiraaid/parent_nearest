@@ -6,6 +6,7 @@ bl_info = {
     "category": "Object",
 }
 
+
 import bpy
 
 class OBJECT_OT_ParentByPositionRotation(bpy.types.Operator):
