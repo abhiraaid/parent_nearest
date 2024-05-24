@@ -1,7 +1,8 @@
 # Parent Nearest
 Useful for parenting overlapping objects(same position, rotation, scale) to each selected object.
 
-Intended usecase is for quickly parenting and hiding collision objects
+Intended usecase is for quickly parenting and hiding collider objects
+
 And so there's an option to add suffix to the child objects
 
 Find the Options on the N Panel > Tools
