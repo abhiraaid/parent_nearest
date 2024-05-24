@@ -6,7 +6,6 @@ bl_info = {
     "category": "Object",
 }
 
-
 import bpy
 
 class OBJECT_OT_ParentByPositionRotation(bpy.types.Operator):
@@ -21,21 +20,26 @@ class OBJECT_OT_ParentByPositionRotation(bpy.types.Operator):
         selected_objects = context.selected_objects
 
         for obj in selected_objects:
+            child_assigned = False
             for other in context.scene.objects:
                 if other != obj and other.parent != obj:
                     if obj.location == other.location:
                         rotation_match = not check_rotation or obj.rotation_euler == other.rotation_euler
                         scale_match = not check_scale or obj.scale == other.scale
-                        if rotation_match and scale_match:
+                        if rotation_match and scale_match and not child_assigned:
                             # Keep the transform of the child object
                             other_matrix_world = other.matrix_world.copy()
                             other.parent = obj
                             other.matrix_world = other_matrix_world
                             # Rename the child object with the specified suffix
                             other.name = f"{other.name}{suffix}"
-                            # Hide the child object
-                            other.hide_viewport = True
-                            other.hide_render = True
+                            # Toggle visibility of the child object
+                            other.hide_set(True)
+                            other.hide_render = True  # Remove from render
+                            child_assigned = True
+                        elif rotation_match and scale_match and child_assigned:
+                            # If multiple matching child objects found, unparent them
+                            other.parent = None
         
         return {'FINISHED'}
 
@@ -71,7 +75,7 @@ def register():
     bpy.types.WindowManager.parent_by_position_rotation_suffix = bpy.props.StringProperty(
         name="Suffix",
         description="Suffix to add to child objects",
-        default="-colonly"
+        default="_child"
     )
 
 def unregister():
