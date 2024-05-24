@@ -13,7 +13,8 @@ Find the Options on the N Panel > Tools
 
 ## Workflow Demo
 
-[![Godot Workflow Demo](https://github.com/abhiraaid/parent_nearest/assets/108699606/74a89a1a-bfa2-41b3-9386-2033c045472f)](https://youtu.be/unBn9zI0W1Y)
+[![Godot Workflow Demo](https://github.com/abhiraaid/parent_nearest/assets/108699606/10ad5299-d6fb-450b-8ccd-71ccd08d23cf)](https://youtu.be/unBn9zI0W1Y)
+
 
 ### Installation
 Install the `.py` file directly
