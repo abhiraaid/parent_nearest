@@ -1,7 +1,7 @@
 # Parent Nearest
 Useful for parenting overlapping objects(same position, rotation, scale) to each selected object.
 
-Intended usecase is for quickly parenting and hiding collider objects
+Intended usecase is for quickly parenting and hiding collider objects. Make sure the collider objects are visible in the scene, because the add-on ignores hidden objects. 
 
 And so there's an option to add suffix to the child objects
 
