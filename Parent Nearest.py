@@ -22,7 +22,7 @@ class OBJECT_OT_ParentByPositionRotation(bpy.types.Operator):
         for obj in selected_objects:
             child_assigned = False
             for other in context.scene.objects:
-                if other != obj and other.parent != obj:
+                if other != obj and other.parent != obj and not other.hide_get():
                     if obj.location == other.location:
                         rotation_match = not check_rotation or obj.rotation_euler == other.rotation_euler
                         scale_match = not check_scale or obj.scale == other.scale
