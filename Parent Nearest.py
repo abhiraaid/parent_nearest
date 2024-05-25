@@ -75,7 +75,7 @@ def register():
     bpy.types.WindowManager.parent_by_position_rotation_suffix = bpy.props.StringProperty(
         name="Suffix",
         description="Suffix to add to child objects",
-        default="_child"
+        default="-colonly"
     )
 
 def unregister():
